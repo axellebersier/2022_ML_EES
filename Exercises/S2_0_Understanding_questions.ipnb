@@ -1,1 +1,25 @@
 S2_1 : SVM 
+
+The linearSVC : define the limits well, scale good large numbers of samples
+The svc (with kernel ='linear') : similar to linear SVC but not with the same slope 
+The SGDClassifier : This estimator implements regularized linear models with stochastic gradient descent (SGD)
+
+If you use the SGD classifier with an alpha that is too big, you will have too many errors and more than in an alpha too big on a SVC
+
+S2_2 Decision trees 
+1.The training and the test data set are well mixed but still more at one size of the moon
+2. We see that it is easier to have correct values of the halfmoon, when the moon is not almost filled. A way to improve that could be to use another model, more precise, for the values that are next to the fullmoon.
+
+S2_3 Random_Forests
+rfc = RandomForestClassifier() : A random forest is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.
+
+etc = ExtraTreesClassifier() : This class implements a meta estimator that fits a number of randomized decision trees (a.k.a. extra-trees) on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.
+==> in this exercise this is this method that has the best accuracy_score
+
+vc_soft = VotingClassifier(estimators=[('rfc',rfc), ('etc',etc)], voting = 'soft')  : 
+hard or soft : Soft Voting/Majority Rule classifier for unfitted estimators. If ‘hard’, uses predicted class labels for majority rule voting. Else if ‘soft’, predicts the class label based on the argmax of the sums of the predicted probabilities, which is recommended for an ensemble of well-calibrated classifiers.
+
+S2_4 : real case study
+In my susceptibility map there is less extrem values, less chance to have a fire. Maybe it is on a different period of the year...
+
+
